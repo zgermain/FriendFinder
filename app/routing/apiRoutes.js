@@ -12,7 +12,9 @@ module.exports = function(app) {
 
   //Post requests
   app.post("/api/friends", function(req, res) {
-    const userData = req.body
+    let userData = req.body;
+    friendData.push(userData);
+    // console.log(userData);
   })
 
 }

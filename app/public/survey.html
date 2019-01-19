@@ -182,7 +182,7 @@
   //Post Form content to API
   $(".submit").on("click", function(event) {
     event.preventDefault();
-    console.log("submit")
+
     //form elements
     let newFriend = {
       name: $("#name").val().trim(),
@@ -202,6 +202,10 @@
     };
 
     console.log(newFriend);
+
+    $.post("/api/friends", newFriend, function(data) {
+      console.log("posted")
+    })
   });
 
   
