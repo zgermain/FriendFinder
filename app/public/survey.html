@@ -153,45 +153,45 @@
       <button type="submit" class="btn btn-primary submit">Submit</button>
     </form>
 
-  <!-- Modal -->
-  <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+ <!-- Modal -->
+ <div id="best-friend-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Table Reserved</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="table-name"></h2>
-          <img id="table-img"   alt="">
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Table Reserved</strong></h2>
       </div>
-
+      <div class="modal-body">
+        <h2 id="friend-name"></h2>
+        <img id="friend-img"   alt="">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
+
   </div>
+</div>
 
   </div>
 
-  
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script type='text/javascript'>
 
 
 
 
-  function getFriendData(friends){
-    $.ajax({ url: "/api/friends", method: "GET"})
-      .then(function(friendData) {
-        console.log(friendData);
-        console.log("................");
-        friends = friendData;
-      })
-  };
+  // function getFriendData(friends){
+  //   $.ajax({ url: "/api/friends", method: "GET"})
+  //     .then(function(friendData) {
+  //       console.log(friendData);
+  //       console.log("................");
+  //       friends = friendData;
+  //     })
+  // };
 
   // function bestFriend(){
 
@@ -203,7 +203,6 @@
   //   for (i=0; i<length.frendData; i++){
 
   //   }
-
 
   // };
 
@@ -231,11 +230,16 @@
 
     console.log(newFriend);
 
-    $.post("/api/friends", newFriend, function(data) {
-      console.log("posted")
-    })
+    $.post("/api/friends", newFriend)
+      .done(function(data) {
+        console.log(data);
+        $('#friend-name').html(data.bestName);
+        $('#friend-img').attr("src", data.bestImage);
 
-    getFriendData();
+        $('#best-friend-modal').modal('toggle');
+      })
+
+    // getFriendData();
   });
 
   

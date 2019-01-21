@@ -3,7 +3,7 @@
 const friendArray = [
   {
     "name":"Test Dude",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct",
     "scores":[
       "5",
       "1",
