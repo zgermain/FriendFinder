@@ -13,8 +13,7 @@ module.exports = function(app) {
   //Post requests
   app.post("/api/friends", function(req, res) {
     let userData = req.body;
-    friendData.push(userData);
-    // console.log(userData);
+    
 
     let userScores = userData.scores;
     console.log(userScores);
@@ -23,12 +22,13 @@ module.exports = function(app) {
     //Calculate best friend
     let bestName = '';
     let bestImage = '';
-    let totalDifference = 100;
+    let totalDifference = 1000;
 
     for (i=0; i < friendData.length; i++) {
       let difference = 0;
-      for (j=0; j < userData.length; j++) {
-        difference += Math.abs(friendData[i].scores[j] = userScores[j])
+      for (j=0; j < userScores.length; j++) {
+        difference += Math.abs(parseInt(friendData[i].scores[j]) - parseInt(userScores[j]));
+        console.log(friendData[i].scores[j]);
       }
       console.log("difference: "+ difference);
 
@@ -40,7 +40,9 @@ module.exports = function(app) {
     }
 
     res.json({message: 'Best Friend Matched!', bestName: bestName, bestImage: bestImage});
-    console.log("bestName: "+bestName)
+    console.log("bestName: "+bestName);
+    friendData.push(userData);
+    // console.log(userData);
   })
 
 }

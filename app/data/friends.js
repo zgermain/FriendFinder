@@ -2,8 +2,8 @@
 
 const friendArray = [
   {
-    "name":"Test Dude",
-    "photo":"https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct",
+    "name":"Michelangelo",
+    "photo":"https://i.pinimg.com/originals/f3/13/f4/f313f4adb6eb1c003f3375d4fe690f29.jpg",
     "scores":[
       "5",
       "1",
@@ -14,6 +14,54 @@ const friendArray = [
       "2",
       "5",
       "4",
+      "1"
+    ]
+  },
+  {
+    "name":"Leonardo",
+    "photo":"https://cdn3.volusion.com/adgss.rhexw/v/vspfiles/photos/SC290-2.jpg?1528079662",
+    "scores":[
+      "4",
+      "3",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "5",
+      "5",
+      "2"
+    ]
+  },
+  {
+    "name":"Rapheal",
+    "photo":"http://worldartsme.com/images/ninja-turtles-raphael-clipart-1.jpg",
+    "scores":[
+      "2",
+      "2",
+      "2",
+      "5",
+      "5",
+      "5",
+      "4",
+      "4",
+      "4",
+      "3"
+    ]
+  },
+  {
+    "name":"Donatello",
+    "photo":"https://i.pinimg.com/originals/5f/fb/a3/5ffba397e55ef633ea78bb157e8e2b58.jpg",
+    "scores":[
+      "2",
+      "2",
+      "1",
+      "1",
+      "1",
+      "2",
+      "1",
+      "2",
+      "2",
       "1"
     ]
   }
